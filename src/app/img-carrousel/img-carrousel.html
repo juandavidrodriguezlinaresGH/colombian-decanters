@@ -1,0 +1,48 @@
+<section class="container py-4">
+  <h2 class="text-center mb-4">Mejores Productos</h2>
+
+  <div
+    id="productosCarousel"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="5000"
+    aria-label="Carrusel de productos"
+  >
+    <div class="carousel-inner">
+      @for (producto of productos; track producto.id; let primero = $first) {
+        <div class="carousel-item" [class.active]="primero">
+          <div class="producto-slide text-center">
+            <img
+              [src]="producto.imagen"
+              [alt]="producto.nombre"
+              class="producto-imagen"
+            />
+
+            <h3 class="mt-3 carrusel-text">{{ producto.nombre }}</h3>
+            <p class="carrusel-text">{{ producto.descripcion }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#productosCarousel"
+      data-bs-slide="prev"
+      aria-label="Producto anterior"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#productosCarousel"
+      data-bs-slide="next"
+      aria-label="Producto siguiente"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</section>

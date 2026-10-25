@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  background-color: #222;
+  min-height: 100vh;
+  font-family: 'Montserrat';
+
+}
+.banner {
+  position: relative;
+  width: 100%;
+}
+
+.home-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banner-button {
+  position: absolute;
+  z-index: 2;
+  left: 27%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: clamp(180px, 30%, 360px);
+  padding: 0.75rem 1rem;
+  border: 1px solid #222;
+  border-radius: 0.35rem;
+  background-color: #d4bd8a;
+  color: #222;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
+  line-height: 1.25;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.banner-button:hover {
+  opacity: 0.9;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 991.98px) {
+  .banner-button {
+    width: clamp(170px, 38%, 300px);
+    padding: 0.65rem 0.85rem;
+    font-size: clamp(0.78rem, 1.8vw, 0.95rem);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .banner-button {
+    width: min(46%, 220px);
+    padding: 0.45rem 0.6rem;
+    bottom: 7%;
+    font-size: clamp(0.68rem, 2.6vw, 0.82rem);
+    line-height: 1.2;
+  }
+}

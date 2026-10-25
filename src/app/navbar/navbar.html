@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg liquor-navbar">
+  <div class="container">
+    <!-- Botón para móviles -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu"
+      aria-controls="navMenu"
+      aria-expanded="false"
+      aria-label="Abrir o cerrar el menú"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item home-item">
+         
+          <a class="nav-link home-link"> Home </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"> Top Productos </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"> Categorias </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"> Ofertas</a>
+        </li>
+
+       
+      </ul>
+
+      <!-- Acciones -->
+      <div class="navbar-actions">
+        <button class="nav-action" type="button" aria-label="Buscar productos">
+          <span class="material-symbols-outlined"> search </span>
+        </button>
+
+        <a class="nav-action" routerLink="/usuario" aria-label="Mi cuenta">
+          <span class="material-symbols-outlined"> person </span>
+        </a>
+
+        <a class="nav-action cart-action" routerLink="/carrito" aria-label="Carrito de compras">
+          <span class="material-symbols-outlined"> shopping_cart </span>
+
+        
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
