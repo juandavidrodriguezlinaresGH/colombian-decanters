@@ -1,0 +1,47 @@
+<footer class="site-footer text-light">
+  <div class="container py-4 py-lg-5">
+    <div class="d-flex justify-content-center mb-4 mb-lg-5">
+      <a routerLink="/" class="footer-brand" aria-label="Colombian Decanters, inicio">
+        <img src="/img/logo.png" alt="Colombian Decanters — tradición colombiana para el mundo" />
+      </a>
+    </div>
+
+    <div class="row g-4 g-lg-5 footer-columns">
+      <section class="col-12 col-md-4">
+        <h2 class="footer-heading heading-story">Colombian Decanters</h2>
+        <p class="mb-2">Licores que celebran la tradición colombiana.</p>
+        <p class="mb-0 footer-muted">Explora sabores para compartir y disfrutar con responsabilidad.</p>
+      </section>
+
+      <nav class="col-12 col-md-4" aria-label="Enlaces del pie de página">
+        <h2 class="footer-heading heading-links">Explora</h2>
+        <ul class="list-unstyled row row-cols-2 g-2 mb-0 footer-link-list">
+          <li class="col"><a routerLink="/">Inicio</a></li>
+          <li class="col"><a routerLink="/categories">Categorías</a></li>
+          <li class="col"><a routerLink="/categories/aguardientes">Aguardientes</a></li>
+          <li class="col"><a routerLink="/categories/vinos">Vinos</a></li>
+          <li class="col"><a routerLink="/categories/cervezas">Cervezas</a></li>
+        </ul>
+      </nav>
+
+      <section class="col-12 col-md-4">
+        <h2 class="footer-heading heading-contact">Compra responsable</h2>
+     <strong>   <p class="mb-2">Venta exclusiva para mayores de edad.</p> </strong> 
+        <a
+          class="footer-legal-link"
+          href="https://www.invima.gov.co/invima_website/static/attachments/alimentos_bebidas_alcoholicas/decreto_1686_2012.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Información sobre bebidas alcohólicas
+        </a>
+      </section>
+    </div>
+
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 text-center">
+      <small class="footer-muted">© {{ currentYear }} Colombian Decanters. Todos los derechos reservados.</small>
+      <small class="footer-muted">Tradición colombiana para el mundo.</small>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,149 @@
+:host {
+  display: block;
+  color: #fff;
+  background-color: #000;
+}
+
+.advertisement-section {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.advertisement-carousel {
+  overflow: hidden;
+  border: 3px solid #F1AB10;
+  border-radius: 1.5rem;
+  background-color: #211b17;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 28%);
+}
+
+.advertisement-slide {
+  position: relative;
+  display: grid;
+  min-height: clamp(260px, 32vw, 430px);
+  place-items: center;
+  padding: 3rem 6rem;
+  background-color: #211b17;
+  background-position: center 46%;
+  background-size: cover;
+  text-align: center;
+}
+
+.advertisement-copy {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 800px);
+  text-shadow: 0 2px 8px rgb(0 0 0 / 75%);
+  
+}
+
+.advertisement-eyebrow {
+  margin-bottom: 0.35rem;
+  color: #d4bd8a;
+  font-size: clamp(0.75rem, 1.4vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.advertisement-copy h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+ 
+}
+
+.advertisement-button {
+  min-width: 150px;
+  padding: 0.65rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background-color: #F1AB10;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.advertisement-button:hover,
+.advertisement-button:focus-visible {
+  background-color: #d4bd8a;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.advertisement-control {
+  width: 9%;
+  opacity: 0.95;
+}
+
+.advertisement-control .carousel-control-prev-icon,
+.advertisement-control .carousel-control-next-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 50%;
+  background-size: 48%;
+}
+
+.carousel-indicators {
+  z-index: 2;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 575.98px) {
+  .advertisement-section {
+    padding-inline: 0.75rem !important;
+  }
+
+  .advertisement-carousel {
+    border-width: 2px;
+    border-radius: 1rem;
+  }
+
+  .advertisement-slide {
+    min-height: 250px;
+    padding: 2.5rem 2.75rem;
+    background-position: center;
+  }
+
+  .advertisement-copy h2 {
+    margin-bottom: 0.8rem;
+  }
+
+  .advertisement-button {
+    min-width: 130px;
+    padding: 0.55rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .advertisement-control {
+    width: 13%;
+  }
+
+  .advertisement-control .carousel-control-prev-icon,
+  .advertisement-control .carousel-control-next-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .advertisement-slide {
+    min-height: 320px;
+    padding-inline: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advertisement-button {
+    transition: none;
+  }
+}

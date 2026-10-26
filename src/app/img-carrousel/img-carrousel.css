@@ -1,13 +1,15 @@
 :host {
   display: block;
   color: #fff;
-  font-family: 'Montserrat' ;
+  font-family: 'Montserrat';
   letter-spacing: 2px;
+  background-color: #000;
 }
-.mb-4{
 
-  color: #d4bd8a;
-  text-decoration: underline;
+.mb-4 {
+  color: #f1ab10;
+
+  letter-spacing: 5px;
 }
 
 .producto-slide {
@@ -20,7 +22,6 @@
   height: 260px;
   object-fit: contain;
   border-radius: 20px;
- 
 }
 
 @media (max-width: 575.98px) {

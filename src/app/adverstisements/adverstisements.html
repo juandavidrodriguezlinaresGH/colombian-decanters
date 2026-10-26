@@ -1,0 +1,59 @@
+<section class="container-fluid advertisement-section py-4 px-3 px-md-4" aria-label="Productos destacados">
+  <div
+    id="advertisementsCarousel"
+    class="carousel slide advertisement-carousel"
+    data-bs-ride="carousel"
+    data-bs-interval="5500"
+    aria-label="Anuncios de productos"
+  >
+    <div class="carousel-indicators">
+      @for (ad of advertisements; track ad.id; let index = $index) {
+        <button
+          type="button"
+          data-bs-target="#advertisementsCarousel"
+          [attr.data-bs-slide-to]="index"
+          [class.active]="index === 0"
+          [attr.aria-label]="'Mostrar anuncio ' + (index + 1)"
+          [attr.aria-current]="index === 0 ? 'true' : null"
+        ></button>
+      }
+    </div>
+
+    <div class="carousel-inner">
+      @for (ad of advertisements; track ad.id; let first = $first) {
+        <div class="carousel-item" [class.active]="first">
+          <article
+            class="advertisement-slide"
+            [style.background-image]="'linear-gradient(90deg, rgba(16, 13, 11, .78), rgba(16, 13, 11, .35)), url(' + ad.image + ')'"
+          >
+            <div class="advertisement-copy">
+              <p class="advertisement-eyebrow">{{ ad.eyebrow }}</p>
+              <h2>{{ ad.title }}</h2>
+              <a class="btn advertisement-button" [routerLink]="ad.link">Ver producto</a>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+
+    <button
+      class="carousel-control-prev advertisement-control"
+      type="button"
+      data-bs-target="#advertisementsCarousel"
+      data-bs-slide="prev"
+      aria-label="Anuncio anterior"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+
+    <button
+      class="carousel-control-next advertisement-control"
+      type="button"
+      data-bs-target="#advertisementsCarousel"
+      data-bs-slide="next"
+      aria-label="Siguiente anuncio"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</section>
