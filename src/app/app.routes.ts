@@ -3,6 +3,7 @@ import { Home } from './home/home';
 import { Categories } from './categories/categories';
 import { ImgCarrousel } from './img-carrousel/img-carrousel';
 import { Adverstisements } from './adverstisements/adverstisements';
+import { CartPage } from './cart-page/cart-page';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'img-carrousel', component: ImgCarrousel },
   { path: 'adverstisements', component: Adverstisements },
   { path: 'adverstisements/:slug', component: Adverstisements },
+  { path: 'carrito', component: CartPage },
   { path: '**', redirectTo: '' },
 ];

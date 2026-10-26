@@ -1,0 +1,24 @@
+<aside class="summary" aria-label="Resumen del carrito">
+  <h2 class="summary-title">Subtotal del Carrito</h2>
+
+  <dl class="summary-rows">
+    <div class="summary-row">
+      <dt>Subtotal ({{ itemCount() }} {{ itemCount() === 1 ? 'artículo' : 'artículos' }})</dt>
+      <dd>{{ subtotal() | cop }}</dd>
+    </div>
+    <div class="summary-row">
+      <dt>Envío estimado:</dt>
+      <dd [class.is-free]="shippingFree()">{{ shippingFree() ? 'Gratis' : 'Por calcular' }}</dd>
+    </div>
+  </dl>
+
+  <a class="continue-btn" routerLink="/categories">
+    Continuar Comprando
+    <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+  </a>
+
+  <p class="summary-total">
+    <span>Total Parcial:</span>
+    <strong>{{ subtotal() | cop }}</strong>
+  </p>
+</aside>
