@@ -1,0 +1,45 @@
+<section class="cart-section container py-4 py-lg-5">
+  @if (cart.isEmpty()) {
+    <div class="cart-empty">
+      <span class="material-symbols-outlined empty-icon" aria-hidden="true">shopping_cart</span>
+      <h1 class="cart-title">Tu carrito está vacío</h1>
+      <p class="empty-text">
+        Aún no has agregado productos. Explora las categorías y elige tu próxima botella.
+      </p>
+      <a class="empty-btn" routerLink="/categories">Volver a la tienda</a>
+    </div>
+  } @else {
+    <app-free-shipping-bar [subtotal]="cart.subtotal()" [threshold]="freeShippingThreshold" />
+
+    <h1 class="cart-title">
+      Carrito de Compras
+      <span class="material-symbols-outlined title-icon" aria-hidden="true">wine_bar</span>
+    </h1>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-8">
+        <ul class="cart-list">
+          @for (item of cart.items(); track item.id) {
+            <li>
+              <app-cart-item-card
+                [item]="item"
+                (increase)="cart.increase($event)"
+                (decrease)="cart.decrease($event)"
+                (remove)="cart.remove($event)"
+              />
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <app-cart-summary
+          class="summary-sticky"
+          [itemCount]="cart.itemCount()"
+          [subtotal]="cart.subtotal()"
+          [shippingFree]="cart.subtotal() >= freeShippingThreshold"
+        />
+      </div>
+    </div>
+  }
+</section>

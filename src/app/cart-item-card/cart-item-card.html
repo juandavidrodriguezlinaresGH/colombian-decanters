@@ -1,0 +1,49 @@
+<article class="item-card">
+  <div class="item-image">
+    <img [src]="item().image" [alt]="item().name" loading="lazy" />
+  </div>
+
+  <div class="item-info">
+    <p class="item-category">{{ item().category }}</p>
+    <h3 class="item-name">{{ item().name }}</h3>
+    <p class="item-price">Precio Unit: {{ item().unitPrice | cop }}</p>
+    <p class="item-subtotal">
+      Subtotal: <strong>{{ lineTotal() | cop }}</strong>
+    </p>
+  </div>
+
+  <div class="item-actions">
+    <div class="quantity" role="group" [attr.aria-label]="'Cantidad de ' + item().name">
+      <button
+        type="button"
+        class="qty-btn"
+        aria-label="Disminuir cantidad"
+        [disabled]="item().quantity <= 1"
+        (click)="decrease.emit(item().id)"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">remove</span>
+      </button>
+
+      <span class="qty-value" aria-live="polite">{{ item().quantity }}</span>
+
+      <button
+        type="button"
+        class="qty-btn"
+        aria-label="Aumentar cantidad"
+        [disabled]="item().quantity >= maxQuantity"
+        (click)="increase.emit(item().id)"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">add</span>
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="remove-btn"
+      [attr.aria-label]="'Eliminar ' + item().name + ' del carrito'"
+      (click)="remove.emit(item().id)"
+    >
+      <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+    </button>
+  </div>
+</article>

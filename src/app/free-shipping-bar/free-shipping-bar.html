@@ -1,0 +1,21 @@
+<div class="shipping-bar" role="status">
+  <p class="shipping-message">
+    <strong class="shipping-label">Envío Gratis</strong>
+    @if (reached()) {
+      <span>¡Listo! Tu pedido tiene envío gratis.</span>
+    } @else {
+      <span>¡Te faltan {{ remaining() | cop }} para obtener envío gratis!</span>
+    }
+  </p>
+
+  <div
+    class="shipping-track"
+    role="progressbar"
+    aria-label="Progreso hacia el envío gratis"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    [attr.aria-valuenow]="progress()"
+  >
+    <div class="shipping-fill" [style.width.%]="progress()"></div>
+  </div>
+</div>
