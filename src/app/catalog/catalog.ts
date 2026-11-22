@@ -47,6 +47,24 @@ export const CATEGORIES: readonly Category[] = [
     image: '/img/products/img-bitter.webp',
     description: 'Explora nuestros licores especiales.',
   },
+  {
+    slug: 'cremas',
+    name: 'Cremas',
+    image: '/img/products/img-licor-cafe-reserva.webp',
+    description: 'Explora nuestras Cremas y licores de café.',
+  },
+  {
+    slug: 'artesanales',
+    name: 'Artesanales',
+    image: '/img/products/img-tomaseca-herencia-pacifico.webp',
+    description: 'Explora nuestras Cremas y licores de café.',
+  },
+  {
+    slug: 'cocteles',
+    name: 'Cocteles',
+    image: '/img/products/img-coctel-mojito.webp',
+    description: 'Explora nuestras Cremas y licores de café.',
+  },
 ];
 
 // Para añadir productos: guarda la imagen en public/img/products y agrega
@@ -107,6 +125,7 @@ export const PRODUCTS: readonly Product[] = [
     name: 'Cerveza Águila',
     image: '/img/products/img-aguila.webp',
   },
+
   {
     id: 7,
     unitPrice: 4000,
@@ -139,7 +158,7 @@ export const PRODUCTS: readonly Product[] = [
     unitPrice: 65000,
     description: 'Licor de Café de nuestra selección de licores especiales.',
     presentation: 'Botella',
-    categorySlug: 'especiales',
+    categorySlug: 'cremas',
     name: 'Licor de Café',
     image: '/img/products/img-licor-de-cafe.webp',
   },
@@ -161,5 +180,123 @@ export const PRODUCTS: readonly Product[] = [
     categorySlug: 'especiales',
     name: 'Bitter',
     image: '/img/products/img-bitter.webp',
+  },
+  {
+    id: 13,
+    unitPrice: 95000,
+    description:
+      'Licor elaborado con ron y una infusión de café colombiano, con reposo en barriles de roble americano.',
+    presentation: 'Botella de 700 ml',
+    categorySlug: 'cremas',
+    name: 'Licor de Café  Gran Reserva',
+    image: '/img/products/img-licor-cafe-reserva.webp',
+  },
+  {
+    id: 14,
+    unitPrice: 45000,
+    description: 'Crema de base láctea elaborada con malta de whisky y un toque de café.',
+    presentation: 'Botella de 750 ml',
+    categorySlug: 'cremas',
+    name: 'Crema de Whisky Coloma',
+    image: '/img/products/img-Crema-de-Whisky.webp',
+  },
+  {
+    id: 15,
+    unitPrice: 35000,
+    description:
+      'Bebida tradicional del Pacífico colombiano, de perfil herbal y sabor entre amargo y dulce, con notas de especias.',
+    presentation: 'Botella de 350 ml',
+    categorySlug: 'artesanales',
+    name: 'Tomaseca Herencia Pacífico',
+    image: '/img/products/img-tomaseca-herencia-pacifico.webp',
+  },
+  {
+    id: 16,
+    unitPrice: 45000,
+    description:
+      'Crema artesanal de aguardiente de caña con ingredientes lácteos y especias aromáticas, de textura cremosa y sabor dulce.',
+    presentation: 'Botella de 350 ml',
+    categorySlug: 'artesanales',
+    name: 'Arrechón Herencia Pacífico',
+    image: '/img/products/img-arrechon-herencia-pacifico.webp',
+  },
+  {
+    id: 17,
+    unitPrice: 35000,
+    description:
+      'Bebida de la línea ancestral de Herencia Pacífico, elaborada con la especia pipilongo y vinculada a la tradición del Pacífico colombiano.',
+    presentation: 'Botella de 350 ml',
+    categorySlug: 'artesanales',
+    name: 'Pipilongo Herencia Pacífico',
+    image: '/img/products/pipilongo-herencia-pacifico.webp',
+  },
+  {
+    id: 18,
+    unitPrice: 11000,
+    description:
+      'Cóctel Daiquiri de Ron Viejo de Caldas, listo para tomar en una práctica presentación en lata.',
+    presentation: 'Lata de 295 ml',
+    categorySlug: 'cocteles',
+    name: 'Daiquiri Ron Viejo de Caldas',
+    image: '/img/products/img-coctel-caldas-daiquiri.webp',
+  },
+  {
+    id: 19,
+    unitPrice: 11000,
+    description:
+      'Cóctel preparado con Ron Viejo de Caldas y sabor a lima y menta verde, listo para tomar.',
+    presentation: 'Lata de 295 ml',
+    categorySlug: 'cocteles',
+    name: 'Mojito Ron Viejo de Caldas',
+    image: '/img/products/img-coctel-mojito.webp',
+  },
+  {
+    id: 20,
+    unitPrice: 11000,
+    description:
+      'Cóctel preparado con Ron Viejo de Caldas y sabor a limón y cola, listo para tomar.',
+    presentation: 'Lata de 295 ml',
+    categorySlug: 'cocteles',
+    name: 'Cuba Libre Ron Viejo de Caldas',
+    image: '/img/products/img-coctelviejodecaldascubalibre.webp',
+  },
+  {
+    id: 21,
+    unitPrice: 4800,
+    description:
+      'Cóctel con tequila sabor a margarita y fresa, listo para tomar en presentación individual.',
+    presentation: 'Lata de 269 ml',
+    categorySlug: 'cocteles',
+    name: 'Los Cuates Fresa',
+    image: '/img/products/img-cuate-fresa.webp',
+  },
+  {
+    id: 22,
+    unitPrice: 4800,
+    description:
+      'Cóctel con tequila sabor a margarita y mango, listo para tomar en presentación individual.',
+    presentation: 'Lata de 269 ml',
+    categorySlug: 'cocteles',
+    name: 'Los Cuates Mango',
+    image: '/img/products/img-cuate-mango.webp',
+  },
+  {
+    id: 23,
+    unitPrice: 4800,
+    description:
+      'Cóctel con tequila sabor a margarita y limon, listo para tomar en presentación individual.',
+    presentation: 'Lata de 269 ml',
+    categorySlug: 'cocteles',
+    name: 'Los Cuates Limon',
+    image: '/img/products/img-cuate-limon.webp',
+  },
+  {
+    id: 24,
+    unitPrice: 4500,
+    description: 'Cerveza Coronita de nuestra selección de las mejores cervezas .',
+    presentation: 'Unidad',
+    categorySlug: 'cervezas',
+    name: 'Cerveza Coronita',
+    image: '/img/products/img-coronita.webp',
   },
 ];
