@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-img-carrousel',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './img-carrousel.html',
   styleUrl: './img-carrousel.css',
 })

@@ -12,11 +12,17 @@
       @for (producto of productos; track producto.id; let primero = $first) {
         <div class="carousel-item" [class.active]="primero">
           <div class="producto-slide text-center">
-            <img
-              [src]="producto.imagen"
-              [alt]="producto.nombre"
-              class="producto-imagen"
-            />
+            <a
+              class="producto-link"
+              [routerLink]="['/products', producto.id]"
+              [attr.aria-label]="'Ver detalle de ' + producto.nombre"
+            >
+              <img
+                [src]="producto.imagen"
+                [alt]="producto.nombre"
+                class="producto-imagen"
+              />
+            </a>
 
             <h3 class="mt-3 carrusel-text">{{ producto.nombre }}</h3>
             <p class="carrusel-text">{{ producto.descripcion }}</p>

@@ -24,6 +24,16 @@
   border-radius: 20px;
 }
 
+.producto-link {
+  display: block;
+  border-radius: 20px;
+}
+
+.producto-link:focus-visible {
+  outline: 3px solid #f1ab10;
+  outline-offset: 4px;
+}
+
 @media (max-width: 575.98px) {
   .producto-slide {
     min-height: 300px;
