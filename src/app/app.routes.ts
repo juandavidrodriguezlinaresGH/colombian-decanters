@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Categories } from './categories/categories';
+import { CategoryDetail } from './category-detail/category-detail';
+import { ProductDetail } from './product-detail/product-detail';
 import { ImgCarrousel } from './img-carrousel/img-carrousel';
 import { Adverstisements } from './adverstisements/adverstisements';
 import { CartPage } from './cart-page/cart-page';
@@ -8,7 +10,8 @@ import { CartPage } from './cart-page/cart-page';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'categories', component: Categories },
-  { path: 'categories/:slug', component: Categories },
+  { path: 'categories/:slug', component: CategoryDetail },
+  { path: 'products/:id', component: ProductDetail },
   { path: 'img-carrousel', component: ImgCarrousel },
   { path: 'adverstisements', component: Adverstisements },
   { path: 'adverstisements/:slug', component: Adverstisements },

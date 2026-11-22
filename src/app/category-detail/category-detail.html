@@ -1,0 +1,37 @@
+<section class="category-section container py-5">
+  <a class="back-link" routerLink="/categories">← Volver a categorías</a>
+
+  @if (category(); as selectedCategory) {
+    <header class="text-center mb-4 mt-3">
+      <h1 class="category-title">{{ selectedCategory.name }}</h1>
+      <p class="category-description mt-3 mb-0">{{ selectedCategory.description }}</p>
+    </header>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+      @for (product of products(); track product.id) {
+        <div class="col">
+          <a
+            class="product-card"
+            [routerLink]="['/products', product.id]"
+            [attr.aria-labelledby]="'product-' + product.id"
+          >
+            <img [src]="product.image" [alt]="product.name" loading="lazy" />
+            <div class="product-overlay" aria-hidden="true"></div>
+            <h2 class="product-name" [id]="'product-' + product.id">{{ product.name }}</h2>
+          </a>
+        </div>
+      } @empty {
+        <p class="empty-message text-center w-100">
+          Próximamente encontrarás productos en esta categoría.
+        </p>
+      }
+    </div>
+  } @else {
+    <div class="text-center mt-4">
+      <h1 class="category-title">Categoría no encontrada</h1>
+      <p class="category-description mt-3">
+        Explora las categorías disponibles para conocer nuestros productos.
+      </p>
+    </div>
+  }
+</section>

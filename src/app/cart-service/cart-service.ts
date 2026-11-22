@@ -18,35 +18,6 @@ export const MAX_QUANTITY = 99;
 
 const STORAGE_KEY = 'colombian-decanters:cart';
 
-// TODO: datos de ejemplo para ver el carrito mientras no exista el botón "Agregar al carrito".
-// Cuando los productos puedan agregarse desde categorías/ofertas, cambiar a `const DEMO_ITEMS = []`.
-const DEMO_ITEMS: CartItem[] = [
-  {
-    id: 4,
-    category: 'Aguardientes',
-    name: 'Aguardiente Amarillo',
-    image: '/img/products/img-aguardiente-amarillo.webp',
-    unitPrice: 52_000,
-    quantity: 1,
-  },
-  {
-    id: 11,
-    category: 'Vinos',
-    name: 'Vino Tinto Reserva Especial',
-    image: '/img/products/img-vino.webp',
-    unitPrice: 89_990,
-    quantity: 2,
-  },
-  {
-    id: 8,
-    category: 'Rones',
-    name: 'Ron Medellín',
-    image: '/img/products/img-ron-medellin.webp',
-    unitPrice: 78_500,
-    quantity: 1,
-  },
-];
-
 @Injectable({
   providedIn: 'root',
 })
@@ -67,13 +38,17 @@ export class CartService {
 
   /** Para usar desde las páginas de productos: si ya está en el carrito suma la cantidad. */
   addItem(product: CartProduct, quantity = 1): void {
+    if (!Number.isFinite(quantity) || quantity < 1) return;
+    const amount = Math.min(Math.trunc(quantity), MAX_QUANTITY);
     this._items.update((items) => {
       const existing = items.find((i) => i.id === product.id);
       if (!existing) {
-        return [...items, { ...product, quantity: Math.min(quantity, MAX_QUANTITY) }];
+        return [...items, { ...product, quantity: amount }];
       }
       return items.map((i) =>
-        i.id === product.id ? { ...i, quantity: Math.min(i.quantity + quantity, MAX_QUANTITY) } : i,
+        i.id === product.id
+          ? { ...i, ...product, quantity: Math.min(i.quantity + amount, MAX_QUANTITY) }
+          : i,
       );
     });
   }
@@ -97,7 +72,9 @@ export class CartService {
   private changeQuantity(id: number, delta: number): void {
     this._items.update((items) =>
       items.map((i) =>
-        i.id === id ? { ...i, quantity: Math.min(Math.max(i.quantity + delta, 1), MAX_QUANTITY) } : i,
+        i.id === id
+          ? { ...i, quantity: Math.min(Math.max(i.quantity + delta, 1), MAX_QUANTITY) }
+          : i,
       ),
     );
   }
@@ -106,12 +83,12 @@ export class CartService {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved === null) {
-        return DEMO_ITEMS.map((i) => ({ ...i }));
+        return [];
       }
       const parsed: unknown = JSON.parse(saved);
       return Array.isArray(parsed) ? (parsed as CartItem[]) : [];
     } catch {
-      return DEMO_ITEMS.map((i) => ({ ...i }));
+      return [];
     }
   }
 
